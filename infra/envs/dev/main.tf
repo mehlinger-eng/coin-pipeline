@@ -17,7 +17,6 @@ locals {
     "bigquery.googleapis.com",
     "cloudbuild.googleapis.com",
     "cloudfunctions.googleapis.com",
-    "cloudrun.googleapis.com",
     "compute.googleapis.com",
     "container.googleapis.com",
     "dataproc.googleapis.com",
