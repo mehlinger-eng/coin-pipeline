@@ -1,0 +1,32 @@
+cat > .gitignore <<'EOF'
+############################
+#  Python & virtualenv
+############################
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+ENV/
+env/
+
+############################
+#  Terraform
+############################
+.terraform/
+*.tfstate*
+crash.log
+terraform.tfvars
+
+############################
+#  IDE / Editor settings
+############################
+.vscode/
+.idea/
+.DS_Store
+
+############################
+#  Misc
+############################
+*.log
+*.tmp
+EOF
