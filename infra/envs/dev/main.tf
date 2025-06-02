@@ -58,6 +58,10 @@ resource "google_storage_bucket" "spark_checkpoints" {
   force_destroy = true
 }
 
+resource "google_pubsub_topic" "coin_ticks" {
+  name = "coin_ticks"
+}
+
 output "terraform_sa_email" {
   value = google_service_account.terraform.email
 }
