@@ -20,7 +20,7 @@ publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(PROJECT_ID, PUBSUB_TOPIC)
 
 API_URL = "https://api.coingecko.com/api/v3"
-COINS = ["bitcoin"]
+COINS = ["bitcoin", "ethereum", "xrp"]
 VS_CURRENCY = "usd"
 
 async def fetch_prices():

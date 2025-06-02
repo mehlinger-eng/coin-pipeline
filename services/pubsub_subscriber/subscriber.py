@@ -2,9 +2,10 @@ import json
 import logging
 import os 
 from google.cloud import pubsub_v1
+from google.cloud.pubsub_v1.subscriber.message import Message
 from google.cloud import bigquery
 from datetime import datetime, timezone 
-from models.coin_price import CoinPrice
+from services.collector.models import CoinPrice
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -66,3 +67,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+import asyncio
+
+def start_subscriber():
+    def run():
+        subscriber = pubsub_v1.SubscriberClient()
+        subscription_path = subscriber.subscription_path(PROJECT_ID, SUBSCRIPTION_ID)
+      
+        logger.info(f"🔄 Listening on {subscription_path}")
+        future = subscriber.subscribe(subscription_path, callback=callback)
+      
+        try:
+            future.result()
+        except Exception as e:
+            logger.error(f"🚨 Error in subscriber: {e}")
+            future.cancel()
+
+    return asyncio.to_thread(run)

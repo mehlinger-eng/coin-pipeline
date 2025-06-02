@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 import asyncio
 from services.collector.scheduler import start_scheduler
+from services.pubsub_subscriber.subscriber import start_subscriber
+
 
 app = FastAPI()
 

@@ -1,0 +1,12 @@
+{
+  "gcp": {
+    "project_id": "virtual-voyage-457204-c3"
+  },
+  "pubsub": {
+    "subscription_id": "coin_sub"
+  },
+  "bigquery": {
+    "dataset": "crypto_data",
+    "table": "coin_prices"
+  }
+}
