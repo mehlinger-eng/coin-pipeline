@@ -8,5 +8,8 @@ setup(
         "pydantic",
         "google-cloud-pubsub",
         "google-cloud-bigquery",
+        "fastapi",
+        "uvicorn",
+        "httpx",
     ],
 ) 

@@ -9,6 +9,7 @@ app = FastAPI()
 @app.on_event("startup")
 async def startup_event():
     asyncio.create_task(start_scheduler())
+    asyncio.create_task(start_subscriber())
 
 @app.get("/health")
 async def health_check():
